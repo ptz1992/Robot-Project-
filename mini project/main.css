@@ -1,0 +1,17 @@
+.main_content{
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  border: 8px gold solid;
+  width: 70%;
+  height: 500px;
+}
+
+.tag{
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  height: 10px;
+  top: 300px;
+  margin: 30px;
+}
