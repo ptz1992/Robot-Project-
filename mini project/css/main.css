@@ -1,0 +1,49 @@
+.main_content{
+  background-color: black;
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  margin-bottom: 50px;
+  width: 70%;
+  height: 600px;
+  border: 3px gold solid;
+}
+
+.main_content2{
+  font-size: 3em;
+  display: flex;
+  margin: 20px;
+  width: 80%;
+  height: 550px;
+  border-right: 1px gold solid;
+}
+
+.main_content3{
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  width: 100%;
+  height: 550px;
+}
+
+#omo{
+  width: 100%;
+  height: 100%;
+}
+
+.tag{
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  height: 10px;
+  top: 300px;
+  margin: 30px;
+}
+
+.main_content:hover figcaption{ opacity: 1; }
+.main_content:hover .line::before { width: 80%; }
+.main_content:hover .line::after { width: 80%; }
+.main_content:hover .line span::before { height: 80%; }
+.main_content:hover .line span::after { height: 80.5%; }
