@@ -5,24 +5,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./navigation.css"/>
-  <link rel="stylesheet" href="./index.css"/>
-  <link rel="stylesheet" href="./main.css"/>
-  <link rel="stylesheet" href="./side.css"/> 
+  <link rel="stylesheet" href="./css/footer.css"/>
+  <link rel="stylesheet" href="./css/main.css"/>
+  <link rel="stylesheet" href="./css/side.css"> 
+  <link rel="stylesheet" href="./css/index.css"/>
+  <link rel="stylesheet" href="./css/logo.css"/> 
+  <link rel="stylesheet" href="./css/header.css"/>
+  <link rel="stylesheet" href="./css/battery.css"/>
+  <script src='/jscode/test.js'></script>
 </head>
 <body>
 <header>
   <div class="headers">
-    <form class="search_form" onsubmit="return false;">
-      <input class="search_area" type="text" placeholder="Search">
-      <i class="fa-sharp fa-solid fa-magnifying-glass" id="search_button"></i>
-      <!-- <button class="search-button">Search</button> -->
-    </form>
-    <img src="/image/real logo.png"> 
+    <a class="rid" href="./index.html">
+      <img src="/image/real logo.png">
+      <span id="logo_text">Six mEn</span>
+      <span id="logo_text2">Project</span>
+    </a>
+    <span class="login">로그인 |</span>
+    <span class="login">회원가입 |</span>
+    <span class="login">시작페이지로 |</span>
 </div>
     <nav>
       <div class="title_area">
-        <div class="title">Six MAN mini project</div>
+        <div class="title">A1 Omorobot</div>
         <div class="explain">Liverpool manager Jurgen Klopp has said 
           he will not leave the club unless he is forced to, 
           and hinted at changes at Anfield during the summer.
@@ -30,6 +36,7 @@
           who are ninth in the Premier League and 10 points off a top-four spot.</div>
       </div>
       <ul>
+        <li><i class="fa-solid fa-minus" id="more"></i></li>        
         <li class="menu">Menu</li>
         <li class="content">Content</li>
         <li class="something">something</li>
@@ -37,10 +44,19 @@
       </ul>
     </nav>
   </header>
-    <div class="main_content">
-      <span class="tag">메인 컨텐츠</span>
+  <div class="main_content">
+    <div class="main_content2">
+      <div id="omo"></div>
     </div>
-  <div class="side_bar">사이드 바</div>
+    <div class="main_content3"></div>  
+  </div>
+<div class="side_bar">사이드 바</div>
+<div class="footer">
+  <div class="letter">Footer</div>
+  <div class="footer_logo"></div>
+  <input class="footer_input" type="text" placeholder="test">
+</div>
   <script src="https://kit.fontawesome.com/66e5a82cea.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
