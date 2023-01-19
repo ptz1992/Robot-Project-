@@ -1,0 +1,23 @@
+.a_side{
+  display: flex;
+  float: right;
+  right: 0px;
+  height: 280vh;
+  width: 18vw;
+  background-color: white;
+}
+.side{
+  position: sticky;
+  margin-top: 40px;
+  width: 320px;
+  height: 500px;
+  top: 100px;
+  right: 300px;
+  background-color: black;
+  border-radius: 20px;
+}
+.test{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
