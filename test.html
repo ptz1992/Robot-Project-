@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 모바일에서 화면배율을 디바이스 크기 기준으로 설정 -->
+  <!-- 이게 안되면 pc에서의 100px과 모바일에서의 100px이 디바이스 성능에 따라 달라집니다. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+  <link rel="stylesheet" href="./test.css"/>
+</head>
+<body>
+
+<!-- 제이쿼리 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- slick 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+
+<!-- AOS 플러그인 -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- 폰트어썸 불러오기 -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<!-- 중앙 컨텐츠 3차 visual story -->
+<div class="v-story-wrap con">
+    <h2 class="v-story-tt" data-aos="fade-up">R1 mini</h2>
+    <div class="v-story-slider" data-aos="fade-up">
+        <div class="slider-item">
+            <a href="#" class="block">
+                <div class="img-box block">
+                    <img src="./images/1.png" alt="">
+                </div>
+                <div class="discover">
+                    <span class="discover-btn block"></span>
+                    <span class="discover-txt block"></span>
+                </div>
+            </a>
+            <div class="v-story-desc-list">
+                <p class="v-story-desc-tt">ROS를 지원하는 모바일 로봇</p>
+                <p class="v-story-desc">R1mini는 ROS와 ROS2를 지원합니다.</p>
+            </div>
+        </div>
+        <div class="slider-item">
+            <a href="#" class="block">
+                <div class="img-box">
+                    <img src="./images/2.png" alt="">
+                </div>
+                <div class="discover">
+                    <span class="discover-btn block"></span>
+                    <span class="discover-txt block"></span>
+                </div>
+            </a>
+            <div class="v-story-desc-list">
+                <p class="v-story-desc-tt">무료 온라인 ROS교육 제공</p>
+                <p class="v-story-desc">AI전문 개발자가 R1mini를 활용하여 강의하는<br>
+                   ROS온라인교육을 제공합니다</p>
+            </div>
+        </div>
+        <div class="slider-item">
+            <a href="#" class="block">
+                <div class="img-box">
+                    <img src="./images/3.png" alt="">
+                </div>
+                <div class="discover">
+                    <span class="discover-btn block"></span>
+                    <span class="discover-txt block"></span>
+                </div>
+            </a>
+            <div class="v-story-desc-list">
+                <p class="v-story-desc-tt">정밀 엔코더 모터 탑재</p>
+                <p class="v-story-desc">정밀 엔코더를 내장한 모터를 탑재하여<br>
+                  흔들림 없는 안정적인 주행이 가능합니다.</p>
+            </div>
+        </div>
+        <div class="slider-item">
+            <a href="#" class="block">
+                <div class="img-box">
+                    <img src="./images/4.png" alt="">
+                </div>
+                <div class="discover">
+                    <span class="discover-btn block"></span>
+                    <span class="discover-txt block"></span>
+                </div>
+            </a>
+            <div class="v-story-desc-list">
+                <p class="v-story-desc-tt">Lidar센서, 카메라 장착</p>
+                <p class="v-story-desc">360° 라이다와 카메라모듈을 장착할 수 있는<br>
+                  아크릴플레이트를 제공합니다.</p>
+            </div>
+        </div>
+        <div class="slider-item">
+            <a href="#" class="block">
+                <div class="img-box">
+                    <img src="./images/5.png" alt="">
+                </div>
+                <div class="discover">
+                    <span class="discover-btn block"></span>
+                    <span class="discover-txt block"></span>
+                </div>
+            </a>
+            <div class="v-story-desc-list">
+                <p class="v-story-desc-tt">전용 튜닝프로그램 제공</p>
+                <p class="v-story-desc">모터의 응답특성에 따라 주행성능이 달라집니다.<br>
+                  전용 튜닝프로그램을 활용하여<br>
+                  로봇을 더 빠르거나 부드럽게 제어할 수 있습니다.</p>
+            </div>
+        </div>
+        <div class="slider-item">
+            <a href="#" class="block">
+                <div class="img-box">
+                    <img src="./images/6.png" alt="">
+                </div>
+                <div class="discover">
+                    <span class="discover-btn block"></span>
+                    <span class="discover-txt block"></span>
+                </div>
+            </a>
+            <div class="v-story-desc-list">
+                <p class="v-story-desc-tt">IMU 센서, Wi-Fi 모듈 장착</p>
+                <p class="v-story-desc">ESP Wi-Fi 모듈을 장착할 수 있는 포트가<br>
+                   마련되어있습니다.<br>
+                  해당 모듈을 사용하면 아두이노에서도 쉽게 코딩하여<br>
+                  브라우저가 탑재된 PC나 스마트폰에서 원격 제어가<br>
+                   가능합니다.</p>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<script>
+  console.clear();
+
+// animation on scroll
+AOS.init({
+    //once:true,
+    duration:800,
+    easing: 'ease',
+});
+
+
+// 3차 visual stroy slick 적용
+$('.v-story-slider').slick({
+    dots:true,
+    draggable:false,
+    arrows:true,
+    adaptiveHeight:true,
+    centerMode:true,
+    centerPadding:'300px',
+    responsive: [
+        {
+          breakpoint: 1440,
+          settings: {
+            centerPadding:'20vw',
+          }
+        },
+        {
+          breakpoint: 770,
+          settings: {
+            centerPadding:'0',
+            arrows:false,
+          }
+        },
+    ],
+}).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    /* 자바스크립트
+    if (currentSlide !== nextSlide) {
+        document.querySelectorAll('.slick-center + .slick-cloned').forEach((next) => {
+            // timeout required or Slick will overwrite the classes
+            setTimeout(() => next.classList.add('slick-current', 'slick-center'));
+        });
+    }
+    */
+    // IE 호환성을 고려한 제이쿼리
+    if (currentSlide !== nextSlide) {
+        $('.slick-center + .slick-cloned').each(function(index, node) {
+            var $node = $(node);
+            
+            setTimeout(function() {
+                $node.addClass('slick-current');
+                $node.addClass('slick-center');
+            });
+        });
+    }
+}); // 이 코드는 slick infinite 가 맨끝에서 다시 처음으로 돌아가거나 할때도 트랜지션이 적용되기 위한 코드입니다. (centerMode 에서)
+</script>
+
+</body>
+</html>
