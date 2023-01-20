@@ -1,0 +1,88 @@
+<div class="a_side">
+  <div class="side">
+    <div class="side_bar">
+      <h3 style="color: white;">설정 메뉴</h3>
+        <form action="" method="post">
+          <label class="checkbox area" style="color: white;"> 수기입력
+            <input type="checkbox" id="ck1" onclick="toggleTextbox(this)"/>
+          </label>
+          
+          <div class="auto-area" id="selbox" >
+            <select id="selectbox" onchange="changemenu()" style="width: 17vw">
+              <option value="">세팅선택</option>
+              <option name="name" value="speed">속도</option>
+              <option name="name" value="battery">배터리</option>
+              <option name="name" value="color">색상</option>
+            </select>
+            <div id="mainbox" style="display: block;">
+              <input type="text" id="sett" name="age" placeholder="설정값 입렵">  
+            </div>   
+          </div>
+    
+          <div class="test-area" id="setbox" style="display: none;">
+            <input type="text" id="set-text" name="name" placeholder="설정 모드" >
+            <input type="text" id="sett" name="age" placeholder="설정값 입력">
+          </div>
+
+          <div id="colorbox" class="setColorbox" style="display: none;">
+            <input type="color" name="color" value="none" style="width: 25vh; height: 10vh; border-radius: 10px;">
+            
+          </div>
+
+        <button type="submit" style="font-size: large;">전송</button>
+        </form>
+    </div>
+  </div>
+</div>
+<script>
+  function changemenu(value){
+    var selectvalSet = document.getElementById('selectbox');
+    // 셀렉트 박스 내용 만들기
+    const colorbox = document.getElementById('colorbox');
+    const mainbox = document.getElementById('mainbox');
+
+    var setval = selectvalSet.options[selectvalSet.selectedIndex].value;
+    // 셀렉박스 option 의 value 값을 저장하는 setval 
+
+    const setcolor = 'color';
+
+    if(setval == setcolor){
+      colorbox.style.display = 'block';
+      mainbox.style.display = 'none';
+
+    }else{
+      colorbox.style.display = 'none';
+      mainbox.style.display = 'block';
+    }
+  }
+</script>
+
+
+<script>
+  function toggleTextbox(checkbox){
+const textbox = document.getElementById('set-text');
+const selbox = document.getElementById('selbox');
+const setbox = document.getElementById('setbox');
+
+
+
+textbox.disabled = checkbox.checked ? false : true;
+selbox.disabled = checkbox.ckecked ? true : false;
+setbox.disabled = checkbox.checked ? true : false;
+
+
+if(textbox.disabled){
+textbox.value=null;
+selbox.style.display ='block';
+setbox.style.display = 'none';
+
+
+
+}else{
+
+selbox.style.display='none';
+setbox.style.display='block';
+}
+}
+
+</script>

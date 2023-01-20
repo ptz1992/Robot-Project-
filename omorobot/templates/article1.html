@@ -1,0 +1,34 @@
+{% load static %}
+<a name="function"></a>
+<article class="art1">
+  <div class="container1">
+    <h1 class="B_title">Function</h1>
+    <form action="" method="post">
+        <!-- <select name="month" id="id_month">
+          <option>속도</option>
+          <option>배터리</option>
+        </select> -->
+    </form>
+    {% if minicars %}
+      {% for minicar in minicars %}
+        <p>속도{{minicar.speed}}, 배터리{{minicar.battery}}, 색상{{minicar.color}}</p>
+      {% endfor %}        
+    {% endif %}
+    <form action="delete/" method="post">
+      <button type="submit" name="delete">삭제</button>
+    </form>    
+    <div id="omo"></div>
+        <div class="bd"></div>
+  </div>
+</article>
+
+<!-- <script>
+  $(document).ready(function() {
+      $( "select[name=month]" ).val( "{{ month_text }}" );
+      $('select[name=month]').change(function () {
+      console.log($('select[name=month]').val());
+      month = $('select[name=month]').val();
+      $('.form').submit();
+  });
+});
+</script> -->
