@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+ <style>
+  .container{
+    border: 1px solid black;
+    padding: 0;
+    width: 500px;
+    height: 300px;
+  }
+ </style>
+</head>
+<body>
+
+<canvas id="my-house" width="1000" height="1000"></canvas>
+<div class="container">
+  <form action="/submit/" method="get">
+    <input type="text" placeholder="이름"/><input type="text" placeholder="이름"/>
+    <select class="select">
+      <option value="배터리">배터리</option>
+      <option value="이동속도">이동속도</option>
+    </select>><br>
+    <input type="radio"><input type="radio"><input type="radio"><input type="radio"><br>
+    <input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><br>
+    <input type="text" placeholder="이름"/><input type="text" placeholder="이름"/><br>
+    <!-- <textarea name="content" placeholder="내용을 입력하세요."></textarea><br> -->
+    <input type="range"><input type="color"><input type="time">
+    <button>제출하기</button><input type="reset">
+  </form>
+</div>
+
+<script>
+const canvas = document.getElementById("my-house");
+const ctx = canvas.getContext("2d");
+
+// 설정
+ctx.lineWidth = 5; //굵기
+
+// 표시하기
+ctx.beginPath(); // 새로운 경로 설정
+ctx.moveTo(100,100); //초기 위치 설정
+// 실질적으로 그리는 작업
+ctx.lineTo(100, //왼쪽선 시작점
+           500); // 왼쪽선 길이 밑으로 늘어남
+/*ctx.lineTo(400, //밑에 가로선의 왼쪽 시작점
+           700); // 밑에 가로선의 오른쪽 높이 
+ctx.lineTo(700, // 오른쪽 시작점의 위치
+           500); // 오른쪽 시작점의 높이
+ctx.lineTo(700, 
+           100);*/           
+/*ctx.closePath(); //열린 공간을 닫아줌 */
+ctx.stroke(); // 
+</script>
+
+</body>
+</html>

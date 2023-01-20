@@ -1,0 +1,47 @@
+.footer_all{
+  background-color: gold;
+}
+
+.container{
+  margin-left:120px ;
+  margin-bottom: 10px; 
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.social{
+  font-size: 20px;
+  text-align: center;
+  display: inline;
+  margin-left: auto;  
+  margin-right: 300px;
+}
+
+.word{
+  word-spacing: 20px;
+}
+
+.lonum{
+  font-size: 20px;
+  margin: auto;
+  margin-left: 100px;
+}
+
+@media(max-width: 700px){
+  .lonum {
+    display:none;
+  }
+
+  .social{
+    margin: auto; 
+    margin-bottom: 200px; 
+  }
+}
+
+#logo{
+  background-color: gold;
+  margin-bottom: 15px;
+  margin: 0;
+  padding: 0;
+}

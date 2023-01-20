@@ -1,0 +1,44 @@
+.pie-chart {
+  position: absolute;
+  left: 10%; top: 50%;
+  justify-content: center;  
+  align-items: center;
+  width: 20vh;
+  height: 20vh;
+  border-radius: 50%;
+  transition: 0.1s;
+}
+span.center{
+  display : block;
+  position: absolute;
+  top:50%; left:50%;
+  width:100px; height:100px;
+  border-radius: 50%;
+  text-align:center; 
+  line-height: 100px;
+  font-size:30px;
+   transform: translate(-50%, -50%);
+}
+
+.pie-chart2{
+  animation: pie 0.6s forwards;
+}
+@keyframes pie{
+  0%{background : conic-gradient(gold 0% 0%, black 0% 100%)}
+  6%{background : conic-gradient(gold 0% 3%, black 0% 100%)}
+  12%{background : conic-gradient(gold 0% 6%, black 0% 100%)}
+  18%{background : conic-gradient(gold 0% 9%, black 0% 100%)}
+  25%{background : conic-gradient(gold 0% 12%, black 0% 100%)}
+  33%{background : conic-gradient(gold 0% 15%, black 0% 100%)}
+  38%{background : conic-gradient(gold 0% 18%, black 0% 100%)}
+  44%{background : conic-gradient(gold 0% 21%, black 0% 100%)}
+  50%{background : conic-gradient(gold 0% 24%, black 0% 100%)}
+  56%{background : conic-gradient(gold 0% 27%, black 0% 100%)}
+  62%{background : conic-gradient(gold 0% 30%, black 0% 100%)}
+  68%{background : conic-gradient(gold 0% 33%, black 0% 100%)}
+  75%{background : conic-gradient(gold 0% 36%, black 0% 100%)}
+  82%{background : conic-gradient(gold 0% 39%, black 0% 100%)}
+  88%{background : conic-gradient(gold 0% 42%, black 0% 100%)}
+  94%{background : conic-gradient(gold 0% 45%, black 0% 100%)}
+  100%{background : conic-gradient(gold 0% 50%, black 0% 100%)}
+}

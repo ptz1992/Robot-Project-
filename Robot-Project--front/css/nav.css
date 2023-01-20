@@ -1,0 +1,43 @@
+nav{
+  background-color: black;
+  border: 10px black solid;
+  color: white;
+}
+
+a{
+  text-decoration:none !important;
+  color: white;
+}
+/* A1 omorobot 제품 구문 */
+.title_area{
+  margin: 20px;
+}
+.title{
+  display: flex;
+  margin: 40px;
+  font-size: 2em;
+  color: gold;
+}
+.sub_title{
+  color: gold;
+  margin-bottom: 0px;
+}
+
+/* 목록 */
+ul{
+  display: flex;
+  font-size: 1.3rem;
+}
+li{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  height:auto;
+  width: auto;
+  margin: 50px 70px 20px 0px;
+  /* top right bottom left */
+}
+
+li:hover{
+  border-bottom: 2px gold solid;
+}
