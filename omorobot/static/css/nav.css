@@ -1,8 +1,16 @@
+@font-face {
+  font-family: 'NanumSquareNeo-Variable';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 nav{
   background-color: black;
   border: 10px black solid;
   color: white;
 }
+
 
 a{
   text-decoration:none !important;
@@ -18,9 +26,42 @@ a{
   font-size: 2em;
   color: gold;
 }
+/* 구문 애니메이션 제목 */
+.title{
+  line-height: 1.2;
+  font-weight: 700;
+  background-image: linear-gradient(transparent calc(100% - 40px), rgba(255, 227, 68, 0.452) 3px);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 0.8s;
+
+}
+@media (min-width: 1000px) {
+  .title {
+    font-size: 3.5em;
+  }
+}
+.title:hover {
+  background-size: 100% 100%;
+}
+/* 구문 애니메이션 부제 */
 .sub_title{
-  color: gold;
+  line-height: 1.2;
+  background-image: linear-gradient(transparent calc(100% - 7px), rgba(255, 227, 68, 0.452) 3px);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 0.8s;
+  color: rgb(255, 240, 152);
   margin-bottom: 0px;
+  font-family: "NanumSquareNeo-Variable";
+}
+@media (min-width: 1000px) {
+  .sub_title {
+    font-size: 1rem;
+  }
+}
+.sub_title:hover {
+  background-size: 100% 100%;
 }
 
 /* 목록 */
@@ -29,7 +70,7 @@ ul{
   font-size: 1.3rem;
 }
 li{
-  display: flex;
+  display:inline-block; 
   justify-content: center;
   list-style: none;
   height:auto;
@@ -37,7 +78,52 @@ li{
   margin: 50px 70px 20px 0px;
   /* top right bottom left */
 }
-
-li:hover{
-  border-bottom: 2px gold solid;
+.func{
+  color: gold;
 }
+.pro{
+  color: rgb(255, 231, 92);
+}
+.mr{
+  color: rgb(255, 243, 176);
+}
+.about{
+ color:rgb(228, 228, 228);
+}
+/* 목록 밑줄 */
+.func:after {
+  display:block;
+  content: '';
+  border-bottom: solid 2px gold;  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+.func:hover:after { transform: scaleX(1); }
+
+.pro:after {
+  display:block;
+  content: '';
+  border-bottom: solid 2px rgb(255, 231, 92);
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+.pro:hover:after { transform: scaleX(1); }
+
+.mr:after {
+  display:block;
+  content: '';
+  border-bottom: solid 2px rgb(255, 243, 176); 
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+.mr:hover:after { transform: scaleX(1); }
+
+.about:after {
+  display:block;
+  content: '';
+  border-bottom: solid 2px rgb(228, 228, 228);
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+.about:hover:after { transform: scaleX(1); }
+

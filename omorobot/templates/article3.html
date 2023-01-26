@@ -29,11 +29,9 @@
               border="1"
               width="150%"
               height="200"
-              cellspacing="5"
-              >
-                {% if minicars %}
-                <caption> {{ minicar.user_id }} </caption>
-                
+              cellspacing="5">
+                {% if mycars.exists %}
+                <caption> {{ mycar.user_id }} </caption>
                 <thead>
                   <tr align="center">
                     <td> User_ID </td>
@@ -43,21 +41,18 @@
                     <td> Created_at </td>
                   </tr>
                 </thead>
-                {% if value == user_id %}
-                  {% for minicar in minicars %}
-                  {% if minicar.speed >50 %}
+                  {% for mycar in mycars %}
                     <tbody>
                       <tr align="center">
-                        <td> null </td>
-                          <td> {{ minicar.speed }} </td>
-                          <td> {{ minicar.battery }} </td>
-                          <td> {{ minicar.color }} </td>
-                          <td> {{ minicar.created_at }} </td>
+                        <td> {{mycar.user_name}} </td>
+                          <td> {{ mycar.mycar_speed }} </td>
+                          <td> {{ mycar.mycar_battery }} </td>
+                          <td> {{ mycar.mycar_color }} </td>
+                          <td> {{ mycar.created_at }} </td>
                   {% endfor %}
                       </tr>
                     </tbody>
                   </table>
-                {% endif %}
               {% endif %}
             </div>
           </div>

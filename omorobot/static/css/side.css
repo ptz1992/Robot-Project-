@@ -1,36 +1,30 @@
-.a_side{
-  display: flex;
-  float: right;
-  right: 0px;
-  height: 100%;
-  width: 20vw;
-  background-color:  rgb(253, 226, 74);
-}
+/* background: linear-gradient(180deg, black 33.333%, rgb(253, 226, 74,0) 33.333%), 
+  linear-gradient(180deg, rgb(253, 226, 74) 60%, rgba(206,17,38,0) 60%),
+  linear-gradient(180deg, gold 95%, gray 95%);; */
 .side{
-  position: sticky;
-  margin-top: 40px;
-  width: 320px;
-  height: 500px;
-  top: 100px;
-  right: 300px;
-  background-color: black;
-  border-radius: 20px;
-} 
-.test{
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 100px;
+  right: 40px;
+  z-index: 5;
+  min-width: 15%;
+  height: 50vh;
+  transition: all 0.5s;
+  background-color: rgba(255, 255, 255, 0.671);
+  box-shadow: rgba(255, 255, 255, 0.308) 7px 7px 0;
+  border-radius: 20px;
 }
 
-.side_bar{
-  display: grid;
-  justify-content: center;
+.nav-action{
+  background-color: #000;
+  color: gold;
+  font-size: 20px;
+  height: 40px;
 }
 
-#selectbox{
-  width: 12.2vw;
+.h_button{
+  color: black
 }
-
-#sett{
-  width: 12.2vw;
-}
+/* 미디어 쿼리 */

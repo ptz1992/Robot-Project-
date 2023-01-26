@@ -1,34 +1,54 @@
-{% load static %}
-<a name="function"></a>
-<article class="art1">
-  <div class="container1">
-    <h1 class="B_title">Function</h1>
-    <form action="" method="post">
-        <!-- <select name="month" id="id_month">
-          <option>속도</option>
-          <option>배터리</option>
-        </select> -->
-    </form>
-    {% if minicars %}
-      {% for minicar in minicars %}
-        <p>속도{{minicar.speed}}, 배터리{{minicar.battery}}, 색상{{minicar.color}}</p>
-      {% endfor %}        
-    {% endif %}
-    <form action="delete/" method="post">
-      <button type="submit" name="delete">삭제</button>
-    </form>    
-    <div id="omo"></div>
-        <div class="bd"></div>
-  </div>
+<a name="pro"></a>
+<article class="art2"> 
+  <div class="container2">
+    <!-- <h1 class="P_title">Introduce Product</h1> -->
+    <div class="explain1"> 
+      <div class="explain_a">
+      <h1 class="a">R1mini를 소개합니다</h1>
+      <div class="a_1">ROS와 ROS2를 지원하고 정밀 엔코더를 내장한 모터 탑재, <br><br>
+         360도 라이다와 카메라모듈을 장착할 수 있는 아크릴플레이트를 제공합니다.<br><br>
+        RGB LED/헤드라이트 탑재 시리얼 포트를 통해 색상코드를 출력해보세요.</div>
+      </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="explain_a_1">
+        <div class="a_1_1">전용 튜닝 프로그램이 제공되어 모터의 응답 특성에 따라 주행 성능이 달라집니다.<br><br>
+          IMU 센서, Wi-Fi 모듈을 사용하여 아두이노에서 쉽게 코딩하여 <br><br>
+          브라우저가 탑재된 PC나 스마트폰에서 원격제어가 가능합니다.
+        </div>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="explain_a_2">
+        <div class="a_2_1">전용 3D 프린팅 케이스와 3D data 제공됩니다.<br><br>
+          탈착 가능한 카메라 모듈 마운트와 함께 R1mini를 꾸며보세요!
+        </div>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="explain_b">
+      <h1 class="a">R1mini는 <br><br>이런 분들에게 필요합니다.</h1><br><br><br> 
+      <div class="c">딥러닝과 주행로봇을 동시에 공부하거나 연구하시는 분 <br>
+        <br>
+        DC모터의 구동 방법과 주행로봇의 원리부터, SLAM과 영상처리까지 하나의 로봇으로 연구하고 싶으신분<br>
+        <br>
+        ROS1과 ROS2 패키지를 동시에 지원하는 로봇을 서로 비교하면서 공부하고 싶으신 분<br>
+        <br>
+        마커인식,YOLO 구동, 마커 기반 SLAM,라이다,영상 기반 SLAM 등의 다양한 예제를 원하시는 분<br>
+        <br>
+        정기적인 교육을 통해 개발진과 직접 소통하고 개발 방향에 참여하거나, 학습을 하고 싶으신 분<br>
+        <br>
+        엄청난 분량의 ROS, 주행로봇 관련 수업 자료를 이용하고 싶으신 분</div>
+      </div>
+      <div class="omobox">
+        <div class="omo_im"></div>
+        <div class="omo_ex">
+          사이즈 : 193x165x67(mm) <br>
+          배터리 : 리튬이온 18650(3S1P 3.7V 2600mAh) <br>
+          외부 입력 : 버튼 입력 <br>
+          전원 입력 : 12V <br>
+          센서 : 엔코더, 자세센서(IMU), 전류 측정 센서 <br>
+        </div>
+    </div>
+    </div>
+</div>
 </article>
-
-<!-- <script>
-  $(document).ready(function() {
-      $( "select[name=month]" ).val( "{{ month_text }}" );
-      $('select[name=month]').change(function () {
-      console.log($('select[name=month]').val());
-      month = $('select[name=month]').val();
-      $('.form').submit();
-  });
-});
-</script> -->

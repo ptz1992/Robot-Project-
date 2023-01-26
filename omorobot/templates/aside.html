@@ -1,39 +1,59 @@
-<div class="a_side">
-  <div class="side">
-    <div class="side_bar">
-      <h3 style="color: white;">설정 메뉴</h3>
-        <form action="" method="post">
-          <label class="checkbox area" style="color: white;"> 수기입력
-            <input type="checkbox" id="ck1" onclick="toggleTextbox(this)"/>
-          </label>
-          
-          <div class="auto-area" id="selbox" >
-            <select id="selectbox" onchange="changemenu()" class="selectbar" >
-              <option value="">세팅선택</option>
-              <option name="name" value="speed">속도</option>
-              <option name="name" value="battery">배터리</option>
-              <option name="name" value="color">색상</option>
-            </select>
-            <div id="mainbox" style="display: block;" class="text-area">
-              <input class="textin" type="text" id="sett" name="age" placeholder="설정값 입렵">  
-            </div>   
-          </div>
-    
-          <div class="test-area" id="setbox" style="display: none;">
-            <input type="text" id="set-text" name="name" placeholder="설정 모드" >
-            <input type="text" id="sett" name="age" placeholder="설정값 입력">
-          </div>
+<div class="side">
+  <!-- <button type="button" id="addData">데이터 추가</button>
+  <button type="button" id="delData">데이터 삭제</button>
+  <button type="button" id="addDataSet">데이터셋 추가</button>
+  <button type="button" id="delDataset">데이터셋 삭제</button>
 
-          <div id="colorbox" class="setColorbox" style="display: none;">
-            <input type="color" name="color" value="none" style="width: 25vh; height: 10vh; border-radius: 10px;">
-            
-          </div>
-
-        <button type="submit" style="font-size: large;">전송</button>
-        </form>
+  <form id="form">
+    입력 데이터값
+    <br>
+    <div id="inputzone">
+      <input class="chart-value" type="text" value="">
+      <br>
+      <input class="chart-value" type="text" value="">
+      <br>
+      <input class="chart-value" type="text" value="">
+      <br>
+      <input class="chart-value" type="text" value="">
+      <br>
+      <input class="chart-value" type="text" value="">
+      <br>
+      <input class="chart-value" type="text" value="">
+      <br>
+      <input class="chart-value" type="text" value="">
+      <br>
+    </div> -->
+  <!-- </form> -->
+  <a href="#home" class="h_button">home</a>
+  <h3 style="color: white;">설정 메뉴</h3>
+  <form action="createmycar/" method="post">
+    {% csrf_token %}
+    <label class="checkbox area" style="color: white;"> 수기입력
+      <input type="checkbox" id="ck1" onclick="toggleTextbox(this)"/>
+    </label>
+    <div class="auto-area" id="selbox" >
+      <select id="selectbox" onchange="changemenu()" style="width: 17vw" name="mycarselector">
+        <option value="">세팅선택</option>
+        <option name="name" value="speed">속도</option>
+        <option name="name" value="battery">배터리</option>
+        <option name="name" value="color">색상</option>
+      </select>
+      <div id="mainbox" style="display: block;">
+        <input type="text" id="sett" name="number" placeholder="설정값 입렵">  
+      </div>   
     </div>
-  </div>
+    <!-- <div class="test-area" id="setbox" style="display: none;">
+      <p style="color: white; font-size: 10px;">예시 : speed 같은 형식으로 작성해 주세요</p>
+      <input type="text" id="set-text" name="mycarselector" value="" placeholder="설정 모드" >
+      <input type="text" id="sett" name="number" placeholder="설정값 입력">
+    </div> -->
+    <!-- <div id="colorbox" class="setColorbox" style="display: none;">
+      <input type="color" name="color" value="none" style="width: 25vh; height: 10vh; border-radius: 10px;">    
+    </div> -->
+  <button type="submit" style="font-size: large;">전송</button>
+  </form>
 </div>
+
 <script>
   function changemenu(value){
     var selectvalSet = document.getElementById('selectbox');
@@ -58,6 +78,8 @@
 </script>
 
 
+
+<!-- 구분선 -->
 <script>
   function toggleTextbox(checkbox){
 const textbox = document.getElementById('set-text');
@@ -65,24 +87,28 @@ const selbox = document.getElementById('selbox');
 const setbox = document.getElementById('setbox');
 
 
-
 textbox.disabled = checkbox.checked ? false : true;
 selbox.disabled = checkbox.ckecked ? true : false;
 setbox.disabled = checkbox.checked ? true : false;
 
-
 if(textbox.disabled){
 textbox.value=null;
-selbox.style.display ='block';
+selbox.style.display='block';
 setbox.style.display = 'none';
 
 
 
 }else{
-
+// textbox.focus();
 selbox.style.display='none';
+// textbox.style.display='block';
 setbox.style.display='block';
 }
 }
 
+function selectboxChange(){
+var setcol = document.getElementById('selbox');
+setcol = setcol.options[selectOption.selectedIndex].value;
+alert(value);
+}
 </script>

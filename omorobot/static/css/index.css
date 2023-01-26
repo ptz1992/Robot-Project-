@@ -6,92 +6,34 @@
 }
 *{
   font-family: 'KorailRoundGothicBold';
+    scroll-behavior: smooth;
 }
 body{
   margin:0px;
 }
-/* 본문 1 function */
-.B_title{
-  position: absolute;
-  top:-150px;
-  font-size: 3em;
-  margin: 0px;
-  border-bottom: 2px black solid;
-}
-.art1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin:0px;
-  width: 80vw;
-  height: 80vh;
-  background-color: rgb(253, 226, 74)
-}
-.container1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin: 0px;
-  width:60vw;
-  height:40vh;
-  background-color: rgb(34, 34, 34);
-  border-radius: 20px;
-}
 
-.bd{
-  position: relative;
-  right: 55%;
-  width: 100px;
-  height: 100px;
-  border-right: 2px solid rgb(253, 226, 74);
-}
-/* 본문 2 product */
-.art2{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin:0px;
-  width: 80vw;
-  height:100vh;
-  background-color: black;
-}
-.container2{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.P_title{
-  position: absolute;
-  top: 0px;
-  font-size: 2.5em;
-  color:rgb(253, 226, 74);
-  border-bottom: 2px rgb(253, 226, 74) solid;
-}
 
-.explain1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  width:20vw;
-  height: 40vh;
-  background-color: rgb(255, 243, 173);
-  border-radius: 10px;
-  color: black;
-  font-size: 1.5rem;
+/* 설명 a side */
+.a{
+  color: gold;
+  font-size: 7rem;
 }
-.explain2{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  width:20vw;
-  height: 20vh;
-  background-color: rgb(255, 243, 173);
-  border-radius: 10px;
+.a_1{
+  font-size: 2rem;
+}
+.explain_a{
+  height: 50vh;
+}
+/* 설명 */
+.c{
+  font-size: 2rem;
+  font-weight: bold;
+}
+.explain1 > * {
+  text-align: center;
+  font-family: 'NanumSquareNeo-Variable';
+ 
 }
 .product{
   display: flex;
@@ -100,29 +42,29 @@ body{
   width:25vw;
   height: 50vh;
   margin: 20px;
-  background-color: rgb(253, 226, 74);
-  border-radius: 10px;
+  background-image: url('/image/battery\ film\ remove.63.png');
+  background-size: 110% 100%;
 }
-
-.product:hover{
-  background-color: rgba(253, 226, 74, 0.678);
+/* 본문 3영역 chart */
+.C_title{
+  position: absolute;
+  top:0px;
+  font-size: 2.5em;
+  margin-bottom: 100px;
 }
-.explain1:hover{
-  background-color: rgba(255, 243, 173, 0.822);
-}
-.explain2:hover{
-  background-color: rgba(255, 243, 173, 0.822);
-}
-
-
 .art3{
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   margin:0px;
-  width: 80vw;
-  height:100vh;
-  background-color: gold;
+  width: 99.1vw;
+  height:200vh;
+  background: linear-gradient(180deg, rgb(255, 234, 116) 0%,  white 100%);
+}
+.chart-container{
+  position: relative;
+  top: 250px;
 }
 
 #omo{

@@ -47,8 +47,8 @@ img{
 #logo_text{
   color: black;
   background-color: black;
-  animation: fadeGold 4s forwards;
-  animation-delay: 2s;
+  animation: fadeGold 2s forwards;
+  animation-delay: 1s;
   position: relative;
   margin-right: 10px;
 }
@@ -56,25 +56,11 @@ img{
 #logo_text2 {
   color: black;
   background-color: black;
-  animation: fadeWhite 4s forwards;
-  animation-delay: 2s;
+  animation: fadeWhite 2s forwards;
+  animation-delay: 1s;
   position: relative;
 }
 
-
-@import 'bourbon';
-
-@mixin gitchText($offset, $text) {
-  content: $text;
-  position: absolute;
-  left: $offset;
-  top: $offset;
-  clip: rect(0, 900px, 0, 0); 
-  background-color: black;
-  color: white;
-  animation: glitch 3s infinite alternate-reverse;
-  animation-delay: 4s;
-}
 
 @keyframes fadeWhite {
   100% { color: white; }
@@ -83,3 +69,8 @@ img{
 @Keyframes fadeGold {
   100% {color:rgb(209, 178, 0);}
 }
+
+/* 미디어 쿼리 */
+/* @media(max-width: 800px){
+  header{     }
+} */ 
