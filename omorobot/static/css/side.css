@@ -2,9 +2,9 @@
   display: flex;
   float: right;
   right: 0px;
-  height: 280vh;
-  width: 18vw;
-  background-color: white;
+  height: 100%;
+  width: 20vw;
+  background-color:  rgb(253, 226, 74);
 }
 .side{
   position: sticky;
@@ -15,9 +15,22 @@
   right: 300px;
   background-color: black;
   border-radius: 20px;
-}
+} 
 .test{
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+}
+
+.side_bar{
+  display: grid;
+  justify-content: center;
+}
+
+#selectbox{
+  width: 12.2vw;
+}
+
+#sett{
+  width: 12.2vw;
 }

@@ -6,12 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>test2</title>
-  <link rel="stylesheet" href="{% static 'css/index.css' %}"/>
   <link rel="stylesheet" href="{% static 'css/battery.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}"/>
   <link rel="stylesheet" href="{% static 'css/header.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}"/>
   <link rel="stylesheet" href="{% static 'css/nav.css' %}"/>
   <link rel="stylesheet" href="{% static 'css/side.css' %}"/>
-  <script src="{% static 'js/test.js' %}"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 </head>
 <body>
   {% include 'head.html' %}
@@ -21,6 +24,14 @@
   {% include 'article2.html' %}
   {% include 'article3.html' %}
   {% include 'footer.html' %}
+
   <script src="https://kit.fontawesome.com/66e5a82cea.js" crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+  crossorigin="anonymous"></script>
+  <script src="{% static 'js/test.js' %}"></script>
+  <script src="{% static 'js/chart.js' %}"></script>
+  <script src="{% static 'js/scroll.js' %}"></script>
 </body>
 </html>

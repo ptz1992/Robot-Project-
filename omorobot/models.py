@@ -8,8 +8,8 @@ class User(models.Model):
 
     
 class Minicar(models.Model):
-  speed = models.IntegerField(default=0, null=True)
-  battery = models.IntegerField(default=0, null=True)
+  speed = models.IntegerField(null=True)
+  battery = models.IntegerField(null=True)
   color = models.TextField(null=True)
   created_at = models.DateTimeField(auto_now_add=True, null=True)
   user = models.ForeignKey("User", on_delete=models.CASCADE, null=True)

@@ -1,7 +1,78 @@
-<a name="mr"></a>
-<article class="art3">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
+{% load static %}
+
+<a name="function"></a>
+<article class="art1">
+  <div class="main area">
+    <h2>history</h2>
+    <div class="top area">
+      <div class="body area">
+        <form action="/" method="/">
+          <div class="choice area" >
+            <select class="select area" id="selectbox">
+              <option value="">모델을 선택해 주세요</option>
+              <optgroup label="원하는 모델을 눌러주세요">
+                <option value="r1">R1</option>
+                <option value="r1mini">R1 mini</option>
+              </optgroup>
+              <option value="allr1">All R1</option>
+            </select>
+            <input id="idinput" type="text" placeholder="유저를 입력해주세요" value="">
+            <button type="submit">적용</button>
+          </div>
+        </form>
+
+          <br/>
+          <br/>
+          <div class="chart area">
+            <div class="table area">
+              <table id="table-box"
+              border="1"
+              width="150%"
+              height="200"
+              cellspacing="5"
+              >
+                {% if minicars %}
+                <caption> {{ minicar.user_id }} </caption>
+                
+                <thead>
+                  <tr align="center">
+                    <td> User_ID </td>
+                    <td> Speed </td>
+                    <td> Battery </td>
+                    <td> Color </td>
+                    <td> Created_at </td>
+                  </tr>
+                </thead>
+                {% if value == user_id %}
+                  {% for minicar in minicars %}
+                  {% if minicar.speed >50 %}
+                    <tbody>
+                      <tr align="center">
+                        <td> null </td>
+                          <td> {{ minicar.speed }} </td>
+                          <td> {{ minicar.battery }} </td>
+                          <td> {{ minicar.color }} </td>
+                          <td> {{ minicar.created_at }} </td>
+                  {% endfor %}
+                      </tr>
+                    </tbody>
+                  </table>
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
 </article>
+
+
+<script>
+  const inid = document.getElementById('idinput');
+  var selectbox = document.getElementById('selectbox');
+  var setval =selectbox.options[selectbox.selectIndex].value;
+  
+  const userid = get
+
+</script>
