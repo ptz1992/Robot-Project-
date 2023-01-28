@@ -1,6 +1,5 @@
 <div class="side">
-  
-  <a href="#home" class="h_button">home</a>
+   <a href="#home" class="h_button">home</a>
   <h3 style="color: white;">설정 메뉴</h3>
   <form action="createmycar/" method="post">
     {% csrf_token %}
@@ -17,8 +16,13 @@
       <div id="mainbox" style="display: block;">
         <input type="text" id="sett" name="number" placeholder="설정값 입렵">  
       </div>   
+    </div>      
+    <div class="colorbox area">
+      <input type="color"  id="colorbox" style="display: none;">
     </div>
-
+    <div>
+      <input type="radio">
+    </div>
   <button type="submit" style="font-size: large;">전송</button>
   </form>
 </div>
@@ -54,6 +58,7 @@
 const textbox = document.getElementById('set-text');
 const selbox = document.getElementById('selbox');
 const setbox = document.getElementById('setbox');
+const colorbox = document.getElementById('colorbox');
 
 
 textbox.disabled = checkbox.checked ? false : true;
