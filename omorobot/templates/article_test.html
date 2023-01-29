@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>art3 훼이크용</title>
+</head>
+<body>
+    <div class="main area">
+        <h2>History</h2>
+        <div class="content area">
+            <div class="select area">
+                <select name="selectbox" id="selbox" onchange="changemenu()">
+                    <option value="">원하는 모델을 선택해 주세요</option>
+                    <optgroup label="모델 선택">
+                        <option value="r1">R1</option>
+                        <option value="r2">R2</option>
+                    </optgroup>
+                    <option value="allmodel">전체 모델 확인</option>
+                </select>
+            </div>
+            <!-- <div class="textIn area">
+                <input type="text" value="" placeholder="유저 이름을 작성해 주세요"/>
+            </div> -->
+        </div>
+        <div class="table area">
+            <div class="hide table" style="display: none;" id="hide_table">
+                <table id="table-box"
+                border="1"
+                width="100%"
+                height="200px"
+                cellspacing="3"
+                >
+
+                {% if mycars.exists %}
+                <caption> 세팅내역 히스토리 </caption>
+                <thead>
+                    <tr align="center">
+                        <td> Robot </td>
+                        <td> User_ID </td>
+                        <td> Speed </td>
+                        <td> Battery </td>
+                        <td> Color </td>
+                        <td> Created_at </td>
+                    </tr>
+                </thead>
+                {% for mycar in mycars %}
+                <tbody>
+                    <tr align="center">
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        {% endfor %}
+                    </tr>
+                </tbody> 
+                {% endif %}                  
+                </table>
+            </div>
+
+            <div class="show area">
+                <div id="r1-box" style="display: none;">
+                <!-- r1 area -->
+                    <table 
+                    border="1"
+                    width="100%"
+                    height="200px"
+                    cellspacing="3"
+                    >
+
+                    {% if mycars.exists %}
+                    <caption> 세팅내역 히스토리 </caption>
+                    <thead>
+                        <tr align="center">
+                            <td> Robot </td>
+                            <td> User_ID </td>
+                            <td> Speed </td>
+                            <td> Battery </td>
+                            <td> Color </td>
+                            <td> Created_at </td>
+                        </tr>
+                    </thead>
+                    {% for mycar in mycars %}
+                    {% if mycar == r1 %}
+                    <tbody>
+                        <tr align="center">
+                            <td> {{ mycar.user_robot }} </td>
+                            <td> {{ mycar.user_name }} </td>
+                            <td> {{ mycar.mycar_speed }} </td>
+                            <td> {{ mycar.mycar_battery }} </td>
+                            <td> {{ mycar.mycar_color }} </td>
+                            <td> {{ mycar.created_at }} </td>
+                            <td>R1</td>
+                            {% endfor %}
+                        </tr>
+                    </tbody> 
+                    {% endif %}
+                    {% endif %}                  
+                    </table>
+                </div>
+                <div id="r2-box" style="display: none;">
+                <!-- r2 area -->
+                    <table
+                    border="1"
+                    width="100%"
+                    height="200px"
+                    cellspacing="3"
+                    >
+
+                    {% if mycars.exists %}
+                    <caption> 세팅내역 히스토리 </caption>
+                    <thead>
+                        <tr align="center">
+                            <td> Robot </td>
+                            <td> User_ID </td>
+                            <td> Speed </td>
+                            <td> Battery </td>
+                            <td> Color </td>
+                            <td> Created_at </td>
+                        </tr>
+                    </thead>
+                    {% for mycar in mycars %}
+                    {% if mycar == r2 %}
+                    <tbody>
+                        <tr align="center">
+                            <td> {{ mycar.user_robot }} </td>
+                            <td> {{ mycar.user_name }} </td>
+                            <td> {{ mycar.mycar_speed }} </td>
+                            <td> {{ mycar.mycar_battery }} </td>
+                            <td> {{ mycar.mycar_color }} </td>
+                            <td> {{ mycar.created_at }} </td>
+                            <td>R2</td>
+                            {% endfor %}
+                        </tr>
+                    </tbody> 
+                    {% endif %}
+                    {% endif %}                  
+                    </table>
+                </div>
+
+                <div id="all-box" style="display: none;">
+                <!-- all area -->
+                    <table
+                    border="1"
+                    width="100%"
+                    height="200px"
+                    cellspacing="3"
+                    >
+
+                    {% if mycars.exists %}
+                    <caption> 세팅내역 히스토리 </caption>
+                    <thead>
+                        <tr align="center">
+                            <td> Robot </td>
+                            <td> User_ID </td>
+                            <td> Speed </td>
+                            <td> Battery </td>
+                            <td> Color </td>
+                            <td> Created_at </td>
+                        </tr>
+                    </thead>
+                    {% for mycar in mycars %}
+                    <tbody>
+                        <tr align="center">
+                            <td> {{ mycar.user_robot }} </td>
+                            <td> {{ mycar.user_name }} </td>
+                            <td> {{ mycar.mycar_speed }} </td>
+                            <td> {{ mycar.mycar_battery }} </td>
+                            <td> {{ mycar.mycar_color }} </td>
+                            <td> {{ mycar.created_at }} </td>
+                            <td>all</td>
+                            {% endfor %}
+                        </tr>
+                    </tbody> 
+                    {% endif %}                  
+                    </table>
+                </div>
+
+            </div>
+                       
+            
+        </div>
+    </div>
+
+
+    <script>
+        function changemenu(value){
+            var selectvar = document.getElementById('selbox');
+            const r1box = document.getElementById('r1-box');
+            const r2box = document.getElementById('r2-box');
+            const allbox = document.getElementById('all-box');
+            const fakebox = document.getElementById('hide_table');
+
+            var selcost = selectvar.options[selectvar.selectedIndex].value;
+
+
+
+            if(selcost == 'r1'){
+                r1box.style.display = 'block';
+                r2box.style.display = 'none';
+                fakebox.style.display = 'none';
+                allbox.style.display = 'none';
+            }else if(selcost == 'r2'){
+                r1box.style.display = 'none';
+                r2box.style.display = 'block';
+                fakebox.style.display = 'none';
+                allbox.style.display = 'none';
+            }else if(selcost == 'allmodel'){
+                r1box.style.display = 'none';
+                r2box.style.display = 'none';
+                fakebox.style.display = 'none';
+                allbox.style.display = 'block';
+            }else{
+                r1box.style.display = 'none';
+                r2box.style.display = 'none';
+                fakebox.style.display = 'block';
+                allbox.style.display = 'none';
+
+            }
+
+
+        }
+
+    </script>
+</body>
+</html>
