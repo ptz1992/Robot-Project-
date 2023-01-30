@@ -31,48 +31,7 @@
   {% include 'article4.html' %}
   {% include 'footer.html' %}
 
-  <div class="main area">
-    <h2>history</h2>
-    <div class="top area">
-      <div class="body area">
-        <div>
-          <select name="location">
-          <option value="1">r1</option>
-          <option value="2">r2</option>
-          <option value="3">r3</option>
-          </select>
-        </div>
-        <div id="output"></div>
-        <div style="display:none">
-        <div id="output1" value="33">
-        {% for mycar in mycars %}
-          <tr align="center">
-            <td> {{mycar.user_name}} </td>
-              <td> {{ mycar.mycar_speed }} </td>
-              <td> {{ mycar.mycar_battery }} </td>
-              <td> {{ mycar.mycar_color }} </td>
-              <td> {{ mycar.created_at }} </td>
-            </tr>
-        {% endfor %}
-          </div>
-              <div id="output2">namename</div>
-        <div id="output3">아놔</div>
-      </div>
-      </div>
-    </div>
-  </div>
-  <script>
-    let output = document.getElementById("output")
-  $("select[name=location]").change(function() {
-    if($(this).val() == 1){
-      output.innerHTML = $("#output1").text();
-    } else if($(this).val() == 2){
-      output.innerHTML = $("#output2").text();
-    } else{
-      output.innerHTML = $("#output3").text();
-    } 
-  });
-</script>
+  
   <script src="https://kit.fontawesome.com/66e5a82cea.js" crossorigin="anonymous"></script>
   <script
   src="https://code.jquery.com/jquery-3.6.3.min.js"

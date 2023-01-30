@@ -13,9 +13,22 @@
         <option name="name" value="battery">배터리</option>
         <option name="name" value="color">색상</option>
       </select>
-      <div id="mainbox" style="display: block;">
-        <input type="text" id="sett" name="number" placeholder="설정값 입렵">  
-      </div>   
+        <div id="textin" style="display: block;">
+            <input type="text" placeholder="숫자로 입력해주세요"/>
+        </div>
+        <div id="colorin" style="display: none;">
+            <input type="color" value="#ff0000">
+        </div>
+    </div>
+    
+
+
+    
+    <form class="setting area" action="createmycar/" method="post">
+                {% csrf_token %}
+                <div class="submit area">
+                    <button type="submit">전송</button>
+                </div>
     </div>      
     <div class="colorbox area">
       <input type="color"  id="colorbox" style="display: none;">
