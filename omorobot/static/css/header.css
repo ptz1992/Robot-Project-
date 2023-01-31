@@ -66,7 +66,7 @@ img{
   100% { color: white; }
 }
 
-@Keyframes fadeGold {
+@keyframes fadeGold {
   100% {color:rgb(209, 178, 0);}
 }
 

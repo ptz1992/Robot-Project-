@@ -15,15 +15,15 @@
 }
 .B_title:hover:after { transform: scaleX(1); }
 
-.art1{
+.art2 {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   margin:0px; margin-right: -20px;
-  width: 99vw;
-  height: 150vh;
-  background: linear-gradient(180deg, rgb(153, 153, 153) 0%, rgb(218, 218, 218) 100%);
+  width: 99.1vw;
+    height: 100vh;
+    /* background: linear-gradient(180deg, rgb(153, 153, 153) 0%, rgb(218, 218, 218) 100%); */
 }
 .container1{
   display: flex;
@@ -31,4 +31,20 @@
   align-items: center;
   position: relative;
   margin: 0px;
+}
+/* 버튼 위치 및 그래프 위치 수정*/
+#inputzone {
+  position: relative;
+  left: 200px;
+  bottom: 150px;
+}
+
+#chart_d3 {
+  position: relative;
+  top: 250px;
+  right: 525px;
+}
+
+.li_button {
+  right: 50px;
 }

@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test2</title>
+  <link rel="stylesheet" href="{% static 'css/article1.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/article2.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/article3.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/article4.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/head_video.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/battery.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/header.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/nav.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/select.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/table.css' %}"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</head>
+<body>
+  {% include 'head.html' %}
+  {% include 'nav.html' %}
+  {% include 'head_video.html' %}
+  {% include 'article1.html' %}
+  {% include 'article2.html' %}
+  {% include 'article3.html' %}
+  {% include 'article4.html' %}
+  {% include 'footer.html' %}
+
+  <script src="https://kit.fontawesome.com/66e5a82cea.js" crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+  crossorigin="anonymous"></script>
+  <script src="{% static 'js/chart.js' %}"></script>
+  <script src="{% static 'js/scroll.js' %}"></script>
+  <script src="{% static 'js/scroll2.js' %}"></script>
+  <script src="{% static 'js/scroll3.js' %}"></script>
+  <script src="{% static 'js/scroll4.js' %}"></script>
+  <script src="{% static 'js/scroll5.js' %}"></script>
+</body>
+</html>

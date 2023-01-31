@@ -1,0 +1,152 @@
+    <div class="side">
+        
+        <h3 style="color : black">SETTING</h3>
+        <h5>기본설정은 1개만 설정됩니다.</h5>
+
+        <form class="setting area" action="createmycar/" method="post">
+            {% csrf_token %}
+            <div class="ckbox area">
+                <label class="checkbox area">수기입력
+                    <input type="checkbox" id="ck1" onclick="toggleTextBox(this)"/>
+                    <p style="display: none;" id="textbox"></p>
+                </label>
+                <br/>
+                <label class="multi click">다중세팅
+                    <input type="checkbox" id="mtck" onclick="toggleMulti(this)"/>
+                </label>
+            </div>
+
+            <div class="control area" id="selbox">
+                <select id="selectbox" onchange="changemenu()" name="mycarselector">
+                    <option value=""></option>
+                    <option value="speed" name="name">SPEED</option>
+                    <option value="battery" name="name">NAME</option>
+                    <option value="color" name="name">COLOR</option>
+                </select>
+
+                <div class="textinput area" style="display: block;" id="mainbox">
+                    <input type="text" id="sett" name="number" placeholder="설정값 입력"/> 
+                </div>
+            </div>
+            
+            <div class="multiset" id="mtset" style="display: none;">
+                <input type="range" min="0" max="100" id="bat" step="1.0" value="battery" name="name">
+                <br/>
+                <label for="bat">BATTERY : 
+                <output id="batval"></output> % </label>
+                <br/>
+                <input type="range" min="0" max="100" id="spd" step="1.0" value="speed" name="name">
+                <br/>
+                <label for="spd">SPEED :
+                <output id="spdval"></output> </label>
+                <br/>
+                <br/>
+                <input type="color" name="name" id="col"><br/>
+                <label>COLOR : <output for="col"></output></label>
+                <br/>
+            </div>
+
+            <div class="two text" id="twotext" style="display: none;">
+                <input type="text" value="" placeholder="세팅모드를 적어주세요">
+                <br/>
+                <input type="text" value="" placeholder="숫자로 입력해주세요">
+                <br/>
+            </div>
+
+            <div class="color area" id="colorbox" style="display: none;">
+                <input type="color">
+            </div>
+
+        
+            <div class="submin area">
+                <button type="submit">전송</button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+<script>
+    
+    document.querySelector('#bat').addEventListener('input',e=>{
+        document.querySelector('#batval').innerHTML = e.target.value;
+    });
+
+    document.querySelector('#spd').addEventListener('input',e=>{
+        document.querySelector('#spdval').innerHTML = e.target.value;
+    });
+</script>
+
+<!-- <script>
+    function changemenu(value){
+        var selectvalSet = document.getElementById('selectbox');
+        const colorbox = document.getElementById('colorbox');
+        const mainbox = document.getElementById('mainbox');
+
+        var setval = selectvalSet.options[selectvalSet.selectedIndex].value;
+
+        const setcolor = 'color';
+
+        if(setval == setcolor){
+            colorbox.style.display = 'block';
+            mainbox.style.display = 'none';
+        }else{
+            colorbox.style.display = 'none';
+            mainbox.style.display = 'block';
+        }
+    }
+</script> -->
+
+
+<script>
+    console.log('sf');
+    function changemenu(value){
+        const selectval = document.getElementById('selectbox');
+        // console.log(selectval);
+        var sel = selectval.options[selectval.selectedIndex].value;
+        console.log('sel');
+    }
+</script>
+
+<script>
+    function toggleTextBox(checkbox){
+        const selbox = document.getElementById('selbox');
+        const setbox = document.getElementById('twotext');
+        const textbox = document.getElementById('textbox');
+        
+        textbox.disabled = checkbox.checked ? false : true ;
+        selbox.disabled = checkbox.checked ? true : false ;
+        setbox.disabled = checkbox.checked ? true : false ;
+        
+
+        if(textbox.disabled){
+            selbox.style.display='block';
+            setbox.style.display='none';
+        }else{
+            selbox.style.display = 'none';
+            setbox.style.display = 'block';
+        }
+    }
+</script>
+
+<script>
+    function toggleMulti(checkbox){
+        const selbox = document.getElementById('selbox');
+        const mtset = document.getElementById('mtset');
+        const textbox = document.getElementById('textbox');
+
+        selbox.disabled = checkbox.checked ? true : false ;
+        mtset.disabled = checkbox.checked ? true : false ;
+        textbox.disabled = checkbox.checked ? true : false ;
+
+        if(textbox.disabled){
+            selbox.style.display = 'none';
+            mtset.style.display = 'block';
+        }else{
+            selbox.style.display = 'block';
+            mtset.style.display = 'none';
+        }
+        
+    }
+</script>

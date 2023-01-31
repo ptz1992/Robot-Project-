@@ -1,56 +1,81 @@
-var ctx = document.getElementById('myChart');
+var ctx = document.getElementById('myChart2');
 	  
 	var config = {
 		type: 'line',
 		data: {
 			labels: [ // Date Objects
-				'data1',
-				'data2',
-				'data3',
-				'data4',
-				'data5',
-				'data6',
-				'data7'
+				'30',
+				'60',
+				'90',
+				'120',
+				'150',
+				// 'data6',
+				// 'data7'
 			],
-			datasets: [{
-				label: 'My First dataset',
-				backgroundColor: 'rgba(75, 192, 192, 1)',
-				borderColor: 'rgba(75, 192, 192, 1)',
-				fill: false,
-				data: [
+			datasets: [
+			// 	{
+			// 	label: 'My First dataset',
+			// 	backgroundColor: 'rgba(75, 192, 192, 1)',
+			// 	borderColor: 'rgba(75, 192, 192, 1)',
+			// 	fill: false,
+			// 	data: [
 					
-				],
-			}, {
-				label: 'My Second dataset',
-				backgroundColor: 'rgba(255, 99, 132, 1)',
-				borderColor: 'rgba(255, 99, 132, 1)',
-				fill: false,
-				data: [
+
+			// 	],
+			// }, {
+			// 	label: 'My Second dataset',
+			// 	backgroundColor: 'rgba(255, 99, 132, 1)',
+			// 	borderColor: 'rgba(255, 99, 132, 1)',
+			// 	fill: false,
+			// 	data: [
 					
-				],
-			}]
+
+			// 	],
+			// },
+			// {
+			// 	label: '90RPM',
+			// 	backgroundColor: 'rgba(255, 99, 132, 1)',
+			// 	borderColor: 'rgba(255, 99, 132, 1)',
+			// 	fill: false,
+			// 	data: [
+					
+			// 	],
+			// }
+		]
 		},
 		options: {
+			
+				
 			maintainAspectRatio: false,
 			title: {
 				text: 'Chart.js Time Scale'
 			},
 			scales: {
+				xAxes: [{
+					ticks:{
+						fontColor : 'black',
+						fontSize: 24
+					}
+				}],
+
 				yAxes: [{
+					ticks:{
+						fontColor : 'black',
+						fontSize: 24
+					},
 					scaleLabel: {
 						display: true,
-						labelString: '차트'
+						labelString: ''
 					}
 				}]
 			},
 		}
 	};
 	 
-	//차트 그리기
-	var myChart = new Chart(ctx, config);
+//차트 그리기
+var myChart2 = new Chart(ctx, config);
 	  
-	// ------------------------------------
-
+//-----------//-----------//-----------//-----------//-----------//-----------//-----------
 	//데이터 추가
 	document.getElementById('addData').onclick = function(){
 		
@@ -65,17 +90,12 @@ var ctx = document.getElementById('myChart');
 		for(var i=0; i<dataset.length; i++){
 			//데이터셋의 데이터 추가
 		}
-		myChart.update();	//차트 업데이트
+		myChart2.update();	//차트 업데이트
 	}
-		// ------------------------------------
-
+	//-----------//-----------//-----------//-----------//-----------//-----------//-----------
 	//데이터셋 추가
-	document.getElementById('addDataSet').onclick = function(){
-
-		for(let i=0; i<$(".chart-value").length;i++){
-			 if(!$(".chart-value")[i].value) return;
-		}
-
+	document.getElementById('set-chart').onclick = function(){
+		// console.log("함수 실행됨")
 
 		var color1 = Math.floor(Math.random() * 256);
 		var color2 = Math.floor(Math.random() * 256);
@@ -84,26 +104,29 @@ var ctx = document.getElementById('myChart');
 		console.log(color1 + " " + color2 + " " + color3)
 		
 		var newDataset = {
-			label: 'new Dataset'+config.data.datasets.length,
-			borderColor : 'rgba('+color1+', '+color2+', '+color3+', 1)',
-			backgroundColor : 'rgba('+color1+', '+color2+', '+color3+', 1)',
+			label: $("#speed1").val() +"-"+ $("#encoder1").val(),
+			// borderColor : 'rgba('+color1+', '+color2+', '+color3+', 1)',
+			borderColor: 'rgb(255, 255, 255)',
+			// backgroundColor : 'rgba('+color1+', '+color2+', '+color3+', 1)',
+			bacgroundColor: 'rgb(255, 255, 255)',
 			data: [],
 			fill: false
 		}
 		
 		// newDataset에 데이터 삽입
-		for (var i=0; i< $(".chart-value").length; i++){
-			var num = Math.floor(Math.random() * 50);
-			newDataset.data.push($(".chart-value")[i].value);
-		}
-		
+		for(let i=0; i<$(".chart-value").length;i++){
+			if($(".chart-value")[i].value > 0){
+			 newDataset.data.push($(".chart-value")[i].value);
+		 }
+	 }
+
 		// chart에 newDataset 푸쉬
 		config.data.datasets.push(newDataset);
 		
-		myChart.update();	//차트 업데이트
-		// console.log($(".chart-value"))
+		myChart2.update();	//차트 업데이트
+		console.log($(".chart-value"))
 	}
-	// ------------------------------------
+	//-----------//-----------//-----------//-----------//-----------//-----------//-----------
 	//데이터 삭제
 	document.getElementById('delData').onclick = function(){
 
@@ -122,31 +145,30 @@ var ctx = document.getElementById('myChart');
 			dataset.data.pop();
 		});
 		
-		myChart.update();	//차트 업데이트
+		myChart2.update();	//차트 업데이트
 	}
-		// ------------------------------------
+
+//-----------//-----------//-----------//-----------//-----------//-----------//-----------
 
 	//데이터셋 삭제
 	document.getElementById('delDataset').onclick = function(){
 		config.data.datasets.splice(-1,1);
-		myChart.update();	//차트 업데이트
-	}
+		myChart2.update();	//차트 업데이트
+		console.log($(".chart-value"))
+
+}
 
 
+
+document.getElementById('del_line_dset').onclick = function(){
+	config.data.datasets.splice(-10,10);
+	myChart2.update();	//차트 업데이트
+	console.log($(".chart-value"))
+}
+
+
+
+
+	
+	
 	//데이터 적용
-	document.getElementById('reData2').onclick = function(){
-		
-		//데이터셋 수 만큼 반복
-		var dataset = config.data.datasets;
-		for(var i=0; i<dataset.length; i++){
-			console.log(dataset);
-			//데이터 갯수 만큼 반복
-			var data = dataset[i].data;
-			for(var j=0 ; j < data.length ; j++){
-				var id = String(i + 1) + String(j + 1)
-				data[j]	= document.getElementById(id).value;
-			}
-		}
-		
-		myChart.update();	//차트 업데이트
-	}

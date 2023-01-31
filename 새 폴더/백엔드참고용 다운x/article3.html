@@ -1,0 +1,57 @@
+<a name="mr"></a>
+<article class="art3">
+  <div>
+    <form action="createuser/" method="post">
+      {% csrf_token %}
+      <input type="text" name="name">
+      <select name="model">
+        <option value="r1">omo r1</option>
+        <option value="r2">omo r2</option>
+      </select>
+      <button type="submit">제출</button>
+    </form>
+  </div>
+  <div>
+  {% for user in users %}
+  <p>{{ user.pk }}  {{user.models}}
+  <a href="{{user.get_delete_url}}">삭제</a></p>
+  <form action="{{user.get_update_url}}" method="POST">
+    {% csrf_token %}
+    <select name="model">
+      <option value="r1">omo r1</option>
+      <option value="r2">omo r2</option>
+    </select>
+    <button type="submit">수정</button>
+  </form>
+  {% endfor %}
+  </div>
+
+  <div>
+    <form action="createminicar/" method="post">
+      {% csrf_token %}
+      <input type="text" name="name">
+      <select name="model">
+        <option value="speed">speed</option>
+        <option value="battery">battery</option>
+        <option value="color">color</option>
+      </select>
+      <button type="submit">제출</button>
+    </form>
+  </div>
+  <div>
+    <div>
+      {% for minicar in minicars %}
+      <p>{{ minicar.speed }}  {{ minicar.battery }}  {{ minicar.color }}
+      <a href="{{minicar.get_delete_url00}}">삭제</a></p>
+      <form action="{{minicar.get_update_url00}}" method="POST">
+        {% csrf_token %}
+        <select name="model">
+          <option value="speed">speed</option>
+          <option value="battery">battery</option>
+          <option value="color">color</option>
+        </select>
+        <button type="submit">수정</button>
+      </form>
+      {% endfor %}
+  </div>
+</article>

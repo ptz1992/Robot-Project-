@@ -1,5 +1,95 @@
+<!-- 프로필 css -->
+<style>
+  /*** Testimonial ***/
+.progress .progress-bar {
+    width: 0px;
+    transition: 2s;
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel .owl-dots {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    border: 5px solid var(--primary);
+    border-radius: 15px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    background: var(--dark);
+    border-color: var(--primary);
+}
+</style>
+
+<!-- article4 시작 -->
 <a name="about"></a>
 <article class="art4">
   <h1 class="A_title">About Us</h1>
-  <div class="about-container" style="height:400px; width:80vw"></div>
+        <h6 class="mb-4">Testimonial</h6>
+        <div class="owl-carousel testimonial-carousel">
+            <div class="testimonial-item text-center">
+                <img class="img-fluid rounded-circle mx-auto mb-4" src="/omorobot/static/image/testimonial-1.jpg" style="width: 100px; height: 100px;">
+                <h5 class="mb-1">Client Name</h5>
+                <p>Profession</p>
+                <p class="mb-0">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="img-fluid rounded-circle mx-auto mb-4" src="/omorobot/static/image/testimonial-2.jpg" style="width: 100px; height: 100px;">
+                <h5 class="mb-1">Client Name</h5>
+                <p>Profession</p>
+                <p class="mb-0">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+    </div>
+</div>
+  <!-- <div container3>
+    <span class="text">
+      <span class="header-text">미래융합교육원</span><br><br><br>  
+
+      융합을 통한 미래 핵심 산업분야 청년인재를 양성합니다.<br><br><br>
+      
+      4차산업혁명 시대에 빠르게 변화하는<br><br> 
+      우리나라 산업환경에 대응 해나갈 수 있도록<br><br> 
+      4차산업혁명의 핵심분야인 AI, 빅데이터,<br><br> 
+      IoT 개발자와 IT인력수요에 맞추어 프론트엔드,<br><br> 
+      백엔드 개발자 양성 교육을 실시 하고 있으며, <br><br>
+      산업현장 맞춤형 구직자 교육,<br><br> 
+      재직자 직무향상 훈련, <br><br>
+      사업주 훈련 등 특성화된 분야의 청년 인재 양성을 위한<br><br>
+      맞춤형 교육을 진행하고 있습니다.</span>      
+  </div> -->
+  <div>
+    <iframe class="map" 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3213.5079740653423!2d127.38000071556392!3d36.34847290069574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35654be1d22851ad%3A0xf50f267c3c4519dd!2z66-4656Y7Jy17ZWp6rWQ7Jyh7JuQ!5e0!3m2!1sko!2skr!4v1674626065689!5m2!1sko!2skr" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+    </iframe></div>
+  <div>
+    <iframe class="vedio1"
+    src="https://videos.files.wordpress.com/IS6FNOdx/ecb7a8ec9785eca780ec9b90eb8f99ec9881ec83813.mp4" 
+    frameborder="0">
+    </iframe>
+  </div>
 </article>
+
+<script>
+      $(".testimonial-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 1000,
+        items: 1,
+        dots: true,
+        loop: true,
+        nav : false
+    });
+</script>

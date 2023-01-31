@@ -1,5 +1,5 @@
 .footer_all{
-  background-color: white;
+  background-color: black;
   color: gold;
   display: flex;
   justify-content: center;
@@ -8,6 +8,7 @@
 }
 .social_total{
   position: relative;
+  margin-top: 15px;
   left: 30px;
 }
 .social2{
@@ -23,24 +24,21 @@
   word-spacing: 5px;
   margin: auto;
   position: relative;
-  
-  color: black;
-
+  color: wheat;
 }
-
 
 #bt{
   margin:10px;
 }
 
 #f_logo1{
-  background-image: url('../image/미래융합교육원.png');
+  background-image: url('../image/미래융합blk.png');
   background-size: 100% 100%;
-  width: 300px;  height: 100px;
+  width: 300px;  height: 150px;
 }
 #f_logo2{
-  background-image: url('../image/whitelogo.png');
-  background-size: 100% 100%;
+  background-image: url('../image/real\ logo.png');
+  background-size: 95% 100%;
   width: 170px;  height: 150px;
 }
 

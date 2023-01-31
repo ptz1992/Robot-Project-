@@ -1,0 +1,34 @@
+/* 본문 2 chart & battery */
+.B_title{
+  position: absolute;
+  top: -500px;
+  font-size: 3em;
+  margin: 0px;
+  color:rgb(80, 80, 80);
+}
+.B_title:after {
+  display:block;
+  content: '';
+  border-bottom: solid 5px rgb(80, 80, 80);
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+.B_title:hover:after { transform: scaleX(1); }
+
+.art1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin:0px; margin-right: -20px;
+  width: 99vw;
+  height: 150vh;
+  background: linear-gradient(180deg, rgb(153, 153, 153) 0%, rgb(218, 218, 218) 100%);
+}
+.container1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0px;
+}
