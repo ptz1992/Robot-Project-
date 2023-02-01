@@ -1,0 +1,14 @@
+{% load static %}
+  <header>
+    <div class="headers">
+      {% if user_name %}
+      <a class="rid" href="/{{user_name}}/" name="home">
+      {% else %}
+      <a class="rid" href="/" name="home">
+      {% endif %}
+        <img src="{% static 'image/real logo.png'%}">
+        <span id="logo_text">Six mAn</span>
+        <span id="logo_text2">Project</span>
+      </a>
+    </div>
+  </header>

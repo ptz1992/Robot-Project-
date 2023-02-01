@@ -1,17 +1,53 @@
-<a name="info"></a>
 <article class="art2_5">
-  <h1 class="I_title">Info</h1>
-      <div>
-        <h6 class="mb-4">Single Bar Chart</h6>
-        <canvas style="height: 350px;" id="bar-chart"></canvas>
-      </div>   
-    <!-- <div class="container1"> -->
-        <div >
-            <h6>Single Line Chart</h6>
-            <canvas style="height: 350px;" id="line-chart"></canvas>
+  <h1 class="I_title">Preview</h1>
+  <div style="position:relative; top:0px;">
+    <div class="revenues">
+      <div class="revenue_box">
+        <i class="fa-solid fa-battery-full fa-3x"></i>
+        <div class="r_text">
+          <p style="color:rgba(170, 170, 170, 0.801)">Battery</p>
+          <h4 style="color:white;">$1234</h4>
         </div>
-  <!-- </div> -->
+      </div>
+      <div class="revenue_box">
+        <i class="fa-solid fa-gauge-simple-high fa-3x"></i>
+        <div class="r_text">
+          <p style="color:rgba(170, 170, 170, 0.801)">Speed</p>
+          <h4 style="color:white;">$1234</h4>
+        </div>
+      </div>
+      <div class="revenue_box">
+        <i class="fa-solid fa-palette fa-3x"></i>
+        <div class="r_text">
+          <p style="color:rgba(170, 170, 170, 0.801)">Color</p>
+          <h4 style="color:white;">$1234</h4>
+        </div>
+      </div>
+      <div class="revenue_box">
+        <i class="fa-solid fa-clock-rotate-left fa-3x"></i>
+        <div class="r_text">
+          <p style="color:rgba(170, 170, 170, 0.801)">Current</p>
+          <h4 style="color:white;">$1234</h4>
+        </div>
+      </div>
+    </div>
+
+      <div style="display:flex">
+        <!-- single chart -->
+        <div class="cha" style="margin-right:7vw;">
+          <h6>Single Line Chart</h6>
+          <canvas style="height: 350px;" id="line-chart"></canvas>
+        </div>
+
+        <!-- bar chart -->
+        <div class="cha">
+          <h6 class="mb-4">Single Bar Chart</h6>
+          <canvas style="height: 350px;" id="bar-chart"></canvas>
+        </div>
+      </div>
+  </div>
 </article>
+
 <!-- 막대 그래프 -->
 <script>
 (function ($) {
@@ -28,7 +64,7 @@
                     "rgba(255, 207, 36, .4)",
                     "rgba(255, 207, 36, .3)"
                 ],
-                data: [14, 45, 22, 33, 55]
+                data: [55, 49, 44, 24, 15]
             }]
         },
         options: {
@@ -37,6 +73,7 @@
     });
 })(jQuery);
 </script>
+
 <!-- 꺾은선 그래프 -->
 <script>
   (function ($) {

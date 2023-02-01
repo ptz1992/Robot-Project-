@@ -4,7 +4,7 @@ a {
 
 header{
   background-color: black;
-  color: gold;
+  color: rgba(223,190,106,0.7);
   margin: 0px;
 }
 
@@ -67,10 +67,5 @@ img{
 }
 
 @keyframes fadeGold {
-  100% {color:rgb(209, 178, 0);}
+  100% {color:rgba(223,190,106,0.7);}
 }
-
-/* 미디어 쿼리 */
-/* @media(max-width: 800px){
-  header{     }
-} */ 

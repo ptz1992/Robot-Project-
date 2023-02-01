@@ -1,51 +1,41 @@
+// const { BubbleController } = require("chart.js");
+
+
+const plugins = {ChartDataLabels};
+
 var ctx = document.getElementById('myChart2');
-	  
 	var config = {
+		plugins: [ChartDataLabels],
 		type: 'line',
 		data: {
-			labels: [ // Date Objects
+			labels: [ 
 				'30',
 				'60',
 				'90',
 				'120',
 				'150',
-				// 'data6',
-				// 'data7'
 			],
 			datasets: [
-			// 	{
-			// 	label: 'My First dataset',
-			// 	backgroundColor: 'rgba(75, 192, 192, 1)',
-			// 	borderColor: 'rgba(75, 192, 192, 1)',
-			// 	fill: false,
-			// 	data: [
-					
-
-			// 	],
-			// }, {
-			// 	label: 'My Second dataset',
-			// 	backgroundColor: 'rgba(255, 99, 132, 1)',
-			// 	borderColor: 'rgba(255, 99, 132, 1)',
-			// 	fill: false,
-			// 	data: [
-					
-
-			// 	],
-			// },
-			// {
-			// 	label: '90RPM',
-			// 	backgroundColor: 'rgba(255, 99, 132, 1)',
-			// 	borderColor: 'rgba(255, 99, 132, 1)',
-			// 	fill: false,
-			// 	data: [
-					
-			// 	],
-			// }
 		]
 		},
 		options: {
-			
+			legend:{
+				labels: {
+					fontColor: "white",
+					fontSize: 18
+				}
+			},
+			plugins:{
+				datalabels:{
+					color: 'white',
+					fontSize: 20,
+					clamp: 'true',
+					align: '-120',
+					offset: '-30'
+					}
+				}
 				
+			,
 			maintainAspectRatio: false,
 			title: {
 				text: 'Chart.js Time Scale'
@@ -53,23 +43,36 @@ var ctx = document.getElementById('myChart2');
 			scales: {
 				xAxes: [{
 					ticks:{
-						fontColor : 'black',
-						fontSize: 24
+						fontColor : 'white',
+						fontSize: 16
+
+					},
+					gridLines:{
+						color: 'yellow',
+						linewidth: 3
 					}
 				}],
 
 				yAxes: [{
 					ticks:{
-						fontColor : 'black',
-						fontSize: 24
+						fontColor : 'white',
+						fontSize: 16
 					},
+					
+					gridLines:{
+						color: 'yellow',
+						linewidth: 3
+					},
+
 					scaleLabel: {
 						display: true,
 						labelString: ''
 					}
-				}]
+				}],
+
 			},
-		}
+		},
+			
 	};
 	 
 //차트 그리기
@@ -105,10 +108,9 @@ var myChart2 = new Chart(ctx, config);
 		
 		var newDataset = {
 			label: $("#speed1").val() +"-"+ $("#encoder1").val(),
-			// borderColor : 'rgba('+color1+', '+color2+', '+color3+', 1)',
-			borderColor: 'rgb(255, 255, 255)',
-			// backgroundColor : 'rgba('+color1+', '+color2+', '+color3+', 1)',
-			bacgroundColor: 'rgb(255, 255, 255)',
+			
+			borderColor : 'rgba('+color1+', '+color2+', '+color3+', 1)',
+			backgroundColor : 'rgba('+color1+', '+color2+', '+color3+', 1)',
 			data: [],
 			fill: false
 		}

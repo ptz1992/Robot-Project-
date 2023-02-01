@@ -1,0 +1,23 @@
+<nav>
+  <div class="title_area"></div>
+  <ul>     
+    <div>
+    <li><a href="#pro" class="pro">Product</a></li>
+    <li><a href="#bat" class="bat">Battery</a></li>
+    <li><a href="#hist" class="hist">History</a></li>
+    <li><a href="#about" class="about" class="about">About us</a></li>
+    </div>
+    {% if user_name %}
+    <div class="test" style="font-size :0.8em">
+      <a class="login_login" href="/{{user_name}}/">
+        <i class="fa fa-user"></i>&nbsp;&nbsp;{{user_name}}</a>&nbsp;&nbsp;
+      <a class="login_login" href="/">logout</a>&nbsp;&nbsp;
+      </div>
+    {% else %}
+    <div class="test">
+    <a class="login_login" href="/login/">로그인</a>&nbsp;&nbsp;
+    <a class="login_login" href="/join/">회원가입</a>
+    </div>
+    {% endif %}
+  </ul>
+</nav>

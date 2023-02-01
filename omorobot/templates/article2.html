@@ -1,9 +1,37 @@
-<a name="mr"></a>
-<article class="art2">
-  <br>
+
+<article class="art1">    
+
+  <h1 class="B_title">Battery</h1>
+
+    <!------------------------------battery도넛-canvas------------------------------------>
+  <div id = "chart_all">
+    <div id = "chart_d">
+      <div class="do_chart_zone" id ="chart_d1" >
+        <canvas id="myChart"></canvas>
+      </div>
+      <!------------------------------encoder도넛-canvas------------------------------------>
+      <div class="e_do_chart_zone" id ="chart_d2" >
+        <canvas id="myChart3"></canvas>
+      </div>
+      
+      
+      <!------------------------------color도넛-canvas    ------------------------------------>
+      <div class="c_do_chart_zone" id ="chart_d3" >
+        <canvas id="myChart4"></canvas>
+      </div>
+    </div>
+    <!--         라인 canvas              -->
+    <div class="li_chart_zone" id ="chart_l1" >
+      <canvas id="myChart2"></canvas>
+    </div>
+  </div>
+
+  <!--          button 존              -->
+  <div class="li_button">
+    
+  <!------------------------------ 옵션존 -------------------------->
   <div id="inputzone">
     <div id="l_chart_value"></div>
-    <br>
     <form id="form32" onsubmit=" return false;">
       <select id="speed1" name="speed">
         <option value="">속도</option>
@@ -18,119 +46,112 @@
         <option value="66">66</option>
       </select>
       <button id="all_submit" type="submit">제출</button>
-    </form>
-    <form id="form">
+    </form> 
+    
+    <form id="form3">
       <div id="inputzone_do">
-        <div id="d_chart_value"></div>
-        <!-- <input type="button" class="chart-value" onclick="getValueInText();"  value="입력"> -->
         <input id="set-chart" type="button" class="chart-value" value="입력">
+        <br>
       </div>
-      <!-- <button type="button" id="reData2">데이터 적용</button> -->
     </form>
   </div>
-  <!-- <button type="button" id="reData2">데이터 적용</button> -->
 
-  <!------------------------------         도넛차트존1    ------------------------------------>
-  <div class="do_chart_zone" id="chart_d1" style="height:100px; width:30vw">
-    <canvas id="myChart"></canvas>
-  </div>
+  <!-- <button type="button" id="addDataSet">데이터셋 추가</button> -->
+    <!-- 필요없으나 삭제시 그래프 출력 안되는문제로 hide -->
+    
 
-  <!------------------------------         도넛차트존2    ------------------------------------>
-  <div class="e_do_chart_zone" id="chart_d2" style="height:100px; width:30vw">
-    <canvas id="myChart3"></canvas>
-  </div>
-
-  <form id="form">
-    <div id="inputzone_do">
-      <div id="e_d_chart_value"></div>
-      <!-- <input type="button" class="chart-value" onclick="getValueInText();"  value="입력"> -->
-      <br>
+    <button type="button" id="delDataset">Delete</button>
+    <button type="button" id="del_line_dset">Refresh(L)</button>
+    <button type="button" id="del_do_dset">Refresh(D)</button>
+    <div id = "hide_button">
+      <button type="button" id="addData">데이터 추가</button>
+      <button type="button" id="delData">데이터 삭제</button>
     </div>
-    <!-- <button type="button" id="reData2">데이터 적용</button> -->
-  </form>
 
-  <!------------------------------         color 도넛존    ------------------------------------>
-  <div class="c_do_chart_zone" id="chart_d3" style="height:100px; width:30vw">
-    <canvas id="myChart4"></canvas>
-  </div>
+  </div>  
 
-  <form id="form">
-    <div id="inputzone_do">
-      <div id="c_d_chart_value"></div>
-      <br>
-    </div>
-    <!-- <button type="button" id="reData2">데이터 적용</button> -->
-  </form>
 
-  <!--         라인차트존              -->
-  <div class="li_chart_zone" id="chart_l1" style="
-  background-color: white;
-  position: relative; 
-  right: 300px;
-  height:400px; 
-  width:800px">
-    <canvas id="myChart2"></canvas>
-  </div>
-
-  <div class="li_button">
-    <button type="button" id="addData">데이터 추가</button><br>
-    <button type="button" id="delData">데이터 삭제</button><br>
-    <!-- <button type="button" id="addDataSet">데이터셋 추가</button> -->
-    <button type="button" id="delDataset">한개 삭제</button><br>
-    <button type="button" id="del_line_dset">전체 새로고침</button><br>
-    <button type="button" id="del_do_dset">도넛새로고침</button>
-  </div>
 </article>
+
+<!------------------------------battery도넛 hide-box------------------------------------>
+<form id="form" style="background-color:black">
+  <div id="inputzone_do">
+    <div id="d_chart_value"></div>
+    <!-- <input id="set-chart" type="button" class="chart-value" value="입력"> -->
+    <br>
+  </div>
+</form>
+<!------------------------------encoder도넛 hide-box------------------------------------>
+<form id="form" style="background-color:black">
+  <div id="inputzone_do">
+    <div id="e_d_chart_value"></div>
+    <br>
+  </div>
+</form>
+<!------------------------------color도넛 hide-box------------------------------------>
+<form id="form" style="background-color:black">
+  <div id="inputzone_do">
+    <div id="c_d_chart_value"></div>
+    <br>
+  </div>
+</form>
+
+
+
+
 <script>
-  $("#form32").on("submit", function (e) {
-    e.preventDefault();
-    $.ajax({
+$("#form32").on("submit",function(e){
+e.preventDefault();
+$.ajax({
 
-      type: "post",
-      url: "/select/chart/",
-      data: JSON.stringify({
-        "speed": $("#speed1").val(),
-        "encoder": $("#encoder1").val()
-      }),
-      success: function (data) {
-        console.log("서버에서 처리되어 돌아온 데이터 : ", data)
+type:"post",
+url:"/select/chart/",
+data:JSON.stringify({
+  "speed":$("#speed1").val(),
+  "encoder":$("#encoder1").val()
+}),
+success: function(data){
+  console.log("서버에서 처리되어 돌아온 데이터 : ", data)
 
-        if (document.getElementById('l_data') || document.getElementById('d_data')) {
-          for (var i = 0; i < 5; i++) {
-            const remove = document.getElementById('l_data');
-            remove.parentNode.removeChild(remove);
-            const remove1 = document.getElementById('d_data');
-            remove1.parentNode.removeChild(remove1);
-            const remove2 = document.getElementById('e_data');
-            remove2.parentNode.removeChild(remove2);
-          }
-        }
+  if(document.getElementById('l_data')||document.getElementById('d_data')){
+    for (var i =0; i<5; i++){
+      const remove = document.getElementById('l_data');
+      remove.parentNode.removeChild(remove);
+      const remove1 = document.getElementById('d_data');
+      remove1.parentNode.removeChild(remove1);
+      const remove2 = document.getElementById('e_data');
+      remove2.parentNode.removeChild(remove2);
+      const remove3 = document.getElementById('c_data');
+      remove3.parentNode.removeChild(remove3);
+    }  
+  }
 
-        for (let i = 0; i < 5; i++) {
-          const addedInput = $(`<input class="chart-value" id="l_data" type="hidden">`)
-          addedInput.val(data[i])
-          $("#l_chart_value").append(addedInput)
-        }
-        for (let i = 5; i < 10; i++) {
-          const addedInput2 = $(`<input class="chart-value2" id="d_data" type="hidden">`)
-          addedInput2.val(data[i])
-          $("#d_chart_value").append(addedInput2)
-        }
+  for(let i = 0 ; i < 5; i++){
+    const addedInput = $(`<input class="chart-value" id="l_data" type="hidden">`)
+    addedInput.val(data[i])
+    $("#l_chart_value").append(addedInput)
+  }
+  for(let i =5 ; i <10; i++){
+    const addedInput2 = $(`<input class="chart-value2" id="d_data" type="hidden">`)
+    addedInput2.val(data[i])
+    $("#d_chart_value").append(addedInput2)
+  }
 
-        for (let i = 10; i < 15; i++) {
-          const addedInput3 = $(`<input class="chart-value3" id="e_data" type="hidden">`)
-          addedInput3.val(data[i])
-          $("#e_d_chart_value").append(addedInput3)
-        }
+  for(let i =10; i<15; i++){
+    const addedInput3 = $(`<input class="chart-value3" id="e_data" type="hidden">`)
+    addedInput3.val(data[i])
+    $("#e_d_chart_value").append(addedInput3)
+  }
+  
+  for(let i =15; i<20; i++){
+    const addedInput4 = $(`<input class="chart-value4" id="c_data" type="hidden">`)
+    addedInput4.val(data[i])
+    $("#c_d_chart_value").append(addedInput4)
+  }
+  //<input class="chart-value" type="text" value="data[i]">
+ }
 
-        for (let i = 15; i < 20; i++) {
-          const addedInput4 = $(`<input class="chart-value4" id="c_data" type="hidden">`)
-          addedInput4.val(data[i])
-          $("#c_d_chart_value").append(addedInput4)
-        }
-        //<input class="chart-value" type="text" value="data[i]"> 
-      }
-    });
-  })
+});
+})
 
 </script>

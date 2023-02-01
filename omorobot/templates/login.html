@@ -6,10 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>로그인</title>
-  <link rel="stylesheet" href="{% static 'css/test1.css' %}"/>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}"/>
   <link rel="stylesheet" href="{% static 'css/header.css' %}"/>
-  <link rel="stylesheet" href="{% static 'css/footer2.css' %}"/>
-  <link rel="stylesheet" href="{% static 'css/nav.css' %}"/>
 </head>
 <body>
 <!-- head 부분 -->
@@ -45,7 +43,7 @@
             <!-- <input type="password" class="form-control" name="password" placeholder="Password" /> -->
           </div>
           {% if message %}
-          <h5 style="color: red;">{{message}}</h5>
+          <h5 style="color: white;">{{message}}</h5>
           <!-- <h5 style="color:red">비밀번호를 확인하세요</h5> -->
           <!-- <h5 style="color:red">로그인 정보가 일치하지 않습니다.</h5> -->
           {% endif %}
@@ -53,11 +51,9 @@
             <input id="check" type="checkbox" class="check" checked>
             <label for="check"><span class="icon"></span> 로그인 유지</label>
           </div>
-          <div class="group">
+          <div class="group" id="login-btn">
             <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button> -->
-
             <input type="submit" class="button" value="로그인">
-
           </div>
 
           </form>
@@ -72,10 +68,5 @@
   src="https://code.jquery.com/jquery-3.6.3.min.js"
   integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
   crossorigin="anonymous"></script>
-  <script src="{% static 'js/chart.js' %}"></script>
-  <script src="{% static 'js/scroll.js' %}"></script>
-  <script src="{% static 'js/scroll2.js' %}"></script>
-  <script src="{% static 'js/scroll3.js' %}"></script>
-  <script src="{% static 'js/scroll4.js' %}"></script>
-  <script src="{% static 'js/scroll5.js' %}"></script>
+
 </html>

@@ -1,0 +1,67 @@
+<a name="info"></a>
+<article class="art2_5">
+  <h1 class="I_title">Info</h1>
+      <div>
+        <h6 class="mb-4">Single Bar Chart</h6>
+        <canvas style="height: 350px;" id="bar-chart"></canvas>
+      </div>   
+    <!-- <div class="container1"> -->
+        <div >
+            <h6>Single Line Chart</h6>
+            <canvas style="height: 350px;" id="line-chart"></canvas>
+        </div>
+  <!-- </div> -->
+</article>
+<!-- 막대 그래프 -->
+<script>
+(function ($) {
+    var ctx4 = $("#bar-chart").get(0).getContext("2d");
+    var myChart4 = new Chart(ctx4, {
+        type: "bar",
+        data: {
+            labels: ["Italy", "France", "Spain", "USA", "Argentina"],
+            datasets: [{
+                backgroundColor: [
+                    "rgba(255, 207, 36, 1)",
+                    "rgba(255, 207, 36, .6)",
+                    "rgba(255, 207, 36, .5)",
+                    "rgba(255, 207, 36, .4)",
+                    "rgba(255, 207, 36, .3)"
+                ],
+                data: [14, 45, 22, 33, 55]
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+})(jQuery);
+</script>
+<!-- 꺾은선 그래프 -->
+<script>
+  (function ($) {
+
+      Chart.defaults.color = "#050099";
+    Chart.defaults.borderColor = "#EAEAEA";
+      var ctx3 = $("#line-chart").get(0).getContext("2d");
+    var myChart3 = new Chart(ctx3, {
+        type: "line",
+        data: {
+            labels: [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],
+            datasets: [{
+                label: "Salse",
+                fill: false,
+                backgroundColor: "rgba(255, 207, 36, .4)",
+                data: [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15],
+                borderColor: "rgba(255, 207, 36, 1)",
+                borderWidth: 1 //경계선 굵기
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+})(jQuery);
+
+</script>
