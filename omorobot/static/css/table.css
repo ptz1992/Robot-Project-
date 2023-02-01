@@ -17,14 +17,13 @@
 	overflow-y: scroll;
 	height: 45vh;
 	width: auto;
-	position: relative;
+	position: sticky;
 	bottom: 80px;
 }
 
 .table-box {
-	  text-align: left;
-	  overflow: hidden;
-	  width: 50vw;
+	  text-align: center;
+	  width: 60vw;
 		display: table;
 		padding: 0;
 		font-size: 0.8em;
@@ -48,7 +47,9 @@
 }
 
 .table-box th {
-	  background-color: #1F2739;
+	  background-color: #313131;
+		position: sticky;
+		top: 0%;
 }
 
 .table_title td{
